@@ -25,20 +25,22 @@ export default function MapImage() {
         height={1440}
         width={2560}
       />
-      {Locations.map((location) => {
-        return (
-          <div key={location.name} onClick={() => handleMenuOpen(location)}>
-            <Buttons
-              x={location.x}
-              y={location.y}
-              buttonContent={location.name}
-            />
-          </div>
-        );
-      })}
+      <div>
+        {Locations.map((location) => {
+          return (
+            <div key={location.name} onClick={() => handleMenuOpen(location)}>
+              <Buttons
+                x={location.x}
+                y={location.y}
+                buttonContent={location.name}
+              />
+            </div>
+          );
+        })}
+      </div>
 
       {menuOpen && (
-        <div className="fixed z-40 flex h-screen w-screen items-center justify-center">
+        <div className="fixed z-40 flex h-screen w-screen items-center justify-center bg-black">
           {/* @ts-ignore */}
           {selectedLocation?.name}
           {/* @ts-ignore */}
