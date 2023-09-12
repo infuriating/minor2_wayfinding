@@ -1,0 +1,80 @@
+export const Locations = [
+  {
+    name: "IO",
+    x: 200,
+    y: 49,
+    size: "medium",
+  },
+  {
+    name: "Mercury",
+    x: 510,
+    y: 152,
+    size: "small",
+  },
+  {
+    name: "Mars",
+    x: 0,
+    y: 0,
+    size: "medium",
+  },
+  {
+    name: "Titan",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Traveler",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Earth",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Nessus",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Tangled Shore",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Dreaming City",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Saturn",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Jupiter",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Titan",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+  {
+    name: "Phobos",
+    x: 0,
+    y: 0,
+    size: "small",
+  },
+];
