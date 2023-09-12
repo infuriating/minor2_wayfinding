@@ -1,12 +1,12 @@
-import Buttons from "@/components/Buttons";
 import MapImage from "@/components/MapImage";
 import React from "react";
-import { Locations } from "@/lib/Locations";
+import Menu from "@/components/Menu";
 
 export default function page() {
   return (
     <>
       <MapImage />
+      <Menu />
     </>
   );
 }
