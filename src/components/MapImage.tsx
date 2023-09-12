@@ -29,11 +29,7 @@ export default function MapImage() {
         {Locations.map((location) => {
           return (
             <div key={location.name} onClick={() => handleMenuOpen(location)}>
-              <Buttons
-                x={location.x}
-                y={location.y}
-                buttonContent={location.name}
-              />
+              <Buttons x={location.x} y={location.y} />
             </div>
           );
         })}
