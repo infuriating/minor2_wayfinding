@@ -50,7 +50,7 @@ export default function MapImage() {
             // @ts-ignore
             top: selectedLocation?.y - 190 + "px",
             // @ts-ignore
-            left: selectedLocation?.x - 175 + "px",
+            left: selectedLocation?.x - 100 + "px",
           }}
         >
           <div className="flex flex-col gap-2">
@@ -58,9 +58,19 @@ export default function MapImage() {
               {/* @ts-ignore */}
               {selectedLocation?.name}
             </p>
-            <p>
-              {/* @ts-ignore */}
-              {selectedLocation?.description}
+            <Image
+              // @ts-ignore
+              src={"/images/destiny2_" + selectedLocation?.name + ".png"}
+              // @ts-ignore
+              alt={selectedLocation?.name}
+              height={200}
+              width={400}
+            />
+            <p
+              className="w-max cursor-pointer rounded-md bg-neutral-800 px-4 py-1 hover:bg-neutral-700"
+              onClick={() => setMenuOpen(false)}
+            >
+              Close the menu
             </p>
           </div>
         </div>
