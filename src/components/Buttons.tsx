@@ -9,8 +9,6 @@ interface ButtonProps {
 }
 
 export default function Buttons({ size, x, y, buttonContent }: ButtonProps) {
-  function openInfoMenu() {}
-
   return (
     <div
       className="absolute cursor-pointer"
@@ -20,18 +18,17 @@ export default function Buttons({ size, x, y, buttonContent }: ButtonProps) {
       }}
     >
       <Tooltip
-        className="bg-darkpurple absolute rounded-md bg-opacity-50 py-1 backdrop-blur-md"
+        className="bg-darkpurple absolute rounded-md bg-opacity-50 py-1"
         style={{
           top: `${y - 30}px`,
         }}
-        color={`secondary`}
         content={buttonContent}
       >
         <div className="flex flex-col">
           <div
-            className={`bg-darkpurple absolute z-10 aspect-square h-8 rounded-full border-4 border-white`}
+            className={`bg-darkpurple absolute z-10 aspect-square h-10 rounded-full border-4 border-white shadow-2xl`}
           />
-          <div className="absolute left-2 top-6 z-[9] aspect-square rotate-180">
+          <div className="absolute left-[12px] top-[30px] z-[9] aspect-square rotate-180 text-lg shadow-2xl">
             ▲
           </div>
         </div>
