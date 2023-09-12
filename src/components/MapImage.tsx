@@ -13,36 +13,58 @@ export default function MapImage() {
   let [selectedLocation, setSelectedLocation] = useState(null);
 
   function handleMenuOpen(location: any) {
-    setMenuOpen(true);
+    setMenuOpen(false);
+    setTimeout(() => {
+      setMenuOpen(true);
+    }, 10);
+
     setSelectedLocation(location);
+
+    console.table(selectedLocation);
   }
 
   return (
-    <div className="relative h-max w-max">
-      <Image
-        src={"/images/destiny2_director.jpeg"}
-        alt="The Director"
-        height={1440}
-        width={2560}
-      />
-      <div>
-        {Locations.map((location) => {
-          return (
-            <div key={location.name} onClick={() => handleMenuOpen(location)}>
-              <Buttons x={location.x} y={location.y} />
-            </div>
-          );
-        })}
+    <>
+      <div className="relative h-max w-max">
+        <Image
+          src={"/images/destiny2_director.jpeg"}
+          alt="The Director"
+          height={1440}
+          width={2560}
+        />
+        <div>
+          {Locations.map((location) => {
+            return (
+              <div key={location.name} onClick={() => handleMenuOpen(location)}>
+                <Buttons x={location.x} y={location.y} />
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {menuOpen && (
-        <div className="fixed z-40 flex h-screen w-screen items-center justify-center bg-black">
-          {/* @ts-ignore */}
-          {selectedLocation?.name}
-          {/* @ts-ignore */}
-          {selectedLocation?.description}
+        <div
+          className="animate-opacityIn absolute z-20 w-[400px] items-center justify-center rounded-md bg-black px-6 py-2"
+          style={{
+            // @ts-ignore
+            top: selectedLocation?.y - 190 + "px",
+            // @ts-ignore
+            left: selectedLocation?.x - 175 + "px",
+          }}
+        >
+          <div className="flex flex-col gap-2">
+            <p className="text-2xl font-semibold">
+              {/* @ts-ignore */}
+              {selectedLocation?.name}
+            </p>
+            <p>
+              {/* @ts-ignore */}
+              {selectedLocation?.description}
+            </p>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
