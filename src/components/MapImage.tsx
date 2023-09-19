@@ -12,6 +12,7 @@ import Draggable from "react-draggable";
 export default function MapImage() {
   let [menuOpen, setMenuOpen] = useState(false);
   let [selectedLocation, setSelectedLocation] = useState(null);
+  let [scale, setScale] = useState(1);
 
   function handleMenuOpen(location: any) {
     setMenuOpen(false);
@@ -24,10 +25,24 @@ export default function MapImage() {
     console.table(selectedLocation);
   }
 
+  function handleScaleOnScroll(e: any) {
+    if (scale > 0.7 && e.deltaY > 0) {
+      setScale(scale - 0.075);
+    } else if (scale < 3 && e.deltaY < 0) {
+      setScale(scale + 0.05);
+    }
+  }
+
   return (
     <div className="h-screen w-screen">
       <Draggable>
-        <div className="relative bottom-[350px] right-[400px] h-max w-max cursor-move">
+        <div
+          className="relative bottom-[350px] right-[400px] h-max w-max cursor-move transition-all duration-75"
+          style={{
+            scale: `${scale}`,
+          }}
+          onWheel={(e) => handleScaleOnScroll(e)}
+        >
           <Image
             draggable={false}
             src={"/images/destiny2_director.jpeg"}
@@ -62,12 +77,17 @@ export default function MapImage() {
               {selectedLocation?.description}
             </p>
             <Image
-              // @ts-ignore
-              src={"/images/destiny2_" + selectedLocation?.name + ".png"}
+              className="rounded-md"
+              src={
+                "/locations/destiny2_" +
+                // @ts-ignore
+                selectedLocation?.name.replace(" ", "") +
+                ".png"
+              }
               // @ts-ignore
               alt={selectedLocation?.name}
               height={200}
-              width={400}
+              width={600}
             />
             <p
               className="absolute bottom-8 w-max cursor-pointer rounded-md bg-neutral-800 px-4 py-1 hover:bg-neutral-700"
