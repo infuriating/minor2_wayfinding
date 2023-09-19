@@ -16,7 +16,7 @@ const Location: React.FC = () => {
     const filteredLocation = Locations.filter(
       (location) => location.name === locationName,
     );
-    setFilteredLocation(filteredLocation);
+    // setFilteredLocation(filteredLocation);
     console.log(filteredLocation);
   }, [locationName]);
 
