@@ -35,7 +35,7 @@ export default function Page({ params }: { params: { location: string } }) {
           {location?.description}
         </p>
         <Image
-          className="rounded-md"
+          className="rounded-md pt-4"
           src={
             "/locations/destiny2_" +
             // @ts-ignore
@@ -47,7 +47,7 @@ export default function Page({ params }: { params: { location: string } }) {
           width={500}
         />
         <Link href={`/map`} className="flex items-center justify-center">
-          <p className="absolute bottom-[2rem] w-max cursor-pointer rounded-md bg-neutral-800 px-32 py-4 hover:bg-neutral-700">
+          <p className="absolute bottom-[2rem] w-max cursor-pointer rounded-md bg-neutral-800 px-32 py-3 transition-all hover:bg-neutral-700">
             Return to the map
           </p>
         </Link>
