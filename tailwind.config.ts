@@ -24,6 +24,7 @@ const config: Config = {
         opacityIn: "opacityIn 0.75s ease-in-out forwards",
         slideInSmooth: "slideInSmooth 1.25s ease-in-out forwards",
         transitionOut: "transitionOut 1.25s ease-in-out forwards",
+        mobileMenuIn: "mobileMenuIn 1s ease-in-out forwards",
       },
       keyframes: {
         darkenIn: {
@@ -43,6 +44,10 @@ const config: Config = {
           "0%": { transform: "translateX(0%)" },
           "10%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-100%)" },
+        },
+        mobileMenuIn: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0%)" },
         },
       },
     },
