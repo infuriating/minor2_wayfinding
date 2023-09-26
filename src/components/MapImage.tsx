@@ -38,7 +38,7 @@ export default function MapImage() {
     <div className="h-screen w-screen">
       <Draggable>
         <div
-          className="relative bottom-[350px] right-[400px] h-max w-max cursor-move transition-all duration-75"
+          className="relative bottom-[350px] right-[400px] h-max w-max cursor-move"
           style={{
             scale: `${scale}`,
           }}
@@ -67,7 +67,7 @@ export default function MapImage() {
       </Draggable>
 
       {menuOpen && (
-        <div className="absolute right-0 top-0 z-20 h-screen w-[600px] animate-slideInSmooth items-center justify-center overflow-hidden rounded-md bg-black">
+        <div className="absolute right-0 top-0 z-20 h-screen w-screen animate-slideInSmooth items-center justify-center overflow-hidden rounded-md bg-black md:w-[600px]">
           <div className="flex flex-col gap-2 px-6 py-4">
             <p className="text-2xl font-semibold">
               {/* @ts-ignore */}
@@ -93,8 +93,8 @@ export default function MapImage() {
             {/* @ts-ignore */}
             <Link href={`/map/${selectedLocation?.name}`}>
               <p className="absolute bottom-[4.25rem] w-max cursor-pointer rounded-md bg-neutral-800 px-4 py-1 hover:bg-neutral-700">
-                {/* @ts-ignore */}
-                Find out more about {selectedLocation?.name}
+                Find out more about {/* @ts-ignore */}
+                <span className="font-bold">{selectedLocation?.name}</span>
               </p>
             </Link>
             <p
