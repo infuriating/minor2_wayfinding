@@ -14,7 +14,7 @@ export default function PageTransition() {
   return (
     <>
       {transition && (
-        <div className="fixed z-50 grid h-screen w-screen grid-rows-6">
+        <div className="pointer-events-none fixed z-50 grid h-screen w-screen grid-rows-6">
           <div
             className="animate-transitionOut h-full w-full bg-gradient-to-tr from-black to-neutral-900"
             style={{ animationDelay: "0ms" }}
