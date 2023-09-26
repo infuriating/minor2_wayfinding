@@ -11,7 +11,7 @@ export default function page() {
       <OutOfBounds />
       <div className="h-screen w-screen overflow-hidden">
         <MapImage />
-        {/* <Menu /> */}
+        <Menu />
       </div>
     </>
   );
