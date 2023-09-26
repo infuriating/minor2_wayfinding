@@ -10,12 +10,14 @@ export async function generateMetadata({
   params: { location: string };
 }) {
   return {
-    title: `Destiny 2 Wayfinding | ${params.location}`,
+    title: `Destiny 2 Wayfinding | ${params.location.replace("%20", " ")}`,
   };
 }
 
 export default function Page({ params }: { params: { location: string } }) {
-  const location = Locations.find((l) => l.name === params.location);
+  const location = Locations.find(
+    (l) => l.name === params.location.replace("%20", " "),
+  );
 
   if (!location) {
     return (
