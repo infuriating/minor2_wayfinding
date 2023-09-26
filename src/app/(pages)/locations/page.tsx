@@ -1,10 +1,12 @@
 import React from "react";
 import { Locations } from "@/lib/Locations";
 import Link from "next/link";
+import PageTransition from "@/components/PageTransition";
 
 export default function page() {
   return (
     <>
+      <PageTransition />
       <p className="py-8 text-center text-3xl font-medium">
         Learn more about the <span className="font-bold">Destiny 2</span>{" "}
         locations here!
