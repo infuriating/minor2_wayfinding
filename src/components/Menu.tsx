@@ -25,7 +25,7 @@ export default function Menu() {
         <div className="fixed right-4 top-4 z-[5] h-16 w-16 rounded-xl bg-black p-4 blur-lg" />
       </div>
       {menuOpen && (
-        <div className="fixed left-0 top-0 z-10 h-screen w-64 animate-slideInSmooth bg-black">
+        <div className="animate-mobileMenuIn fixed left-0 top-0 z-10 h-screen w-64 bg-black">
           <div className="text-md grid h-full grid-cols-1 font-semibold">
             <Link href={"/"}>
               <div className="flex h-full items-center justify-center">
@@ -53,7 +53,7 @@ export default function Menu() {
       )}
       {/* PC */}
       <div className="hidden md:block">
-        <div className="fixed bottom-0 z-10 h-16 w-full bg-black">
+        <div className="fixed bottom-0 z-10 h-16 w-full bg-black bg-opacity-10 backdrop-blur-sm">
           <div className="text-md grid h-full grid-cols-3 font-semibold">
             <Link href={"/"}>
               <div className="flex h-full items-center justify-center">
@@ -72,7 +72,7 @@ export default function Menu() {
             </Link>
           </div>
         </div>
-        <div className="fixed bottom-0 z-[9] h-20 w-full bg-black blur-lg"></div>
+        <div className="fixed bottom-0 z-[9] h-20 w-full bg-black bg-opacity-70 blur-2xl"></div>
       </div>
     </>
   );
