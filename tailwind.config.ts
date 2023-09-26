@@ -23,6 +23,7 @@ const config: Config = {
         darkenIn: "darkenIn 3s ease-in-out forwards",
         opacityIn: "opacityIn 0.75s ease-in-out forwards",
         slideInSmooth: "slideInSmooth 1.25s ease-in-out forwards",
+        transitionOut: "transitionOut 1.25s ease-in-out forwards",
       },
       keyframes: {
         darkenIn: {
@@ -37,6 +38,11 @@ const config: Config = {
         slideInSmooth: {
           "0%": { transform: "translateX(100%)", filter: "opacity(0%)" },
           "100%": { transform: "translateX(0%)", filter: "opacity(100%)" },
+        },
+        transitionOut: {
+          "0%": { transform: "translateX(0%)" },
+          "10%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },
