@@ -26,9 +26,9 @@ export default function Menu() {
       </div>
       {menuOpen && (
         <div className="animate-mobileMenuIn fixed left-0 top-0 z-10 h-screen w-64 bg-black">
-          <div className="text-md grid h-full grid-cols-1 font-semibold">
+          <div className="grid grid-cols-1 gap-2 py-12 text-lg font-semibold">
             <Link href={"/"}>
-              <div className="flex h-full items-center justify-center">
+              <div className="relative flex h-full items-center justify-center">
                 <p className="cursor-pointer rounded-md bg-neutral-800 px-4 py-2 transition-all hover:bg-neutral-700">
                   Home
                 </p>
@@ -48,6 +48,17 @@ export default function Menu() {
                 </p>
               </div>
             </Link>
+            <div className="absolute bottom-4 pl-12">
+              <Link href={"https://infs.world"} className="text-sm">
+                <p>
+                  powered by
+                  <span className="bg-gradient-to-r from-blue-500 to-fuchsia-400 bg-clip-text text-transparent">
+                    {" "}
+                    infs.world
+                  </span>
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
       )}

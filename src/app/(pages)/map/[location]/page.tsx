@@ -1,4 +1,3 @@
-import Buttons from "@/components/Buttons";
 import PageTransition from "@/components/PageTransition";
 import { Locations } from "@/lib/Locations";
 import Image from "next/image";
@@ -31,13 +30,15 @@ export default function Page({ params }: { params: { location: string } }) {
   return (
     <>
       <PageTransition />
-      <div className="p-8">
-        <p className="text-2xl font-semibold">{location?.name}</p>
-        <p className="tracking-tighter text-neutral-300">
-          {location?.description}
-        </p>
+      <div className="relative grid place-items-center p-8 lg:grid-cols-2">
+        <div className="max-w-lg rounded-sm bg-black bg-opacity-25 px-4 py-2 backdrop-blur-lg">
+          <p className="text-2xl font-semibold">{location?.name}</p>
+          <p className="tracking-tighter text-neutral-300">
+            {location?.description}
+          </p>
+        </div>
         <Image
-          className="rounded-md pt-4"
+          className="pt-4"
           src={
             "/locations/destiny2_" +
             // @ts-ignore
@@ -48,12 +49,24 @@ export default function Page({ params }: { params: { location: string } }) {
           height={500}
           width={500}
         />
-        <Link href={`/map`} className="flex items-center justify-center">
-          <p className="absolute bottom-[2rem] w-max cursor-pointer rounded-md bg-neutral-800 px-32 py-3 transition-all hover:bg-neutral-700">
-            Return to the map
-          </p>
-        </Link>
+        <Image
+          className="absolute -z-10 h-full w-full rounded-md object-cover blur-md brightness-75 saturate-[50%]"
+          src={
+            "/locations/destiny2_" +
+            // @ts-ignore
+            location?.name.replace(" ", "") +
+            ".png"
+          }
+          alt={location?.name}
+          height={200}
+          width={200}
+        />
       </div>
+      <Link href={`/map`} className="flex items-center justify-center">
+        <p className="absolute bottom-[2rem] w-max cursor-pointer rounded-md bg-neutral-800 px-14 py-3 transition-all hover:bg-neutral-700">
+          Return to the map
+        </p>
+      </Link>
     </>
   );
 }
