@@ -82,7 +82,7 @@ export default function MapImage() {
               src={
                 "/locations/destiny2_" +
                 // @ts-ignore
-                selectedLocation?.name.replace(" ", "") +
+                selectedLocation?.name.replace(" ", "").toLowerCase() +
                 ".png"
               }
               // @ts-ignore

@@ -42,7 +42,7 @@ export default function Page({ params }: { params: { location: string } }) {
           src={
             "/locations/destiny2_" +
             // @ts-ignore
-            location?.name.replace(" ", "") +
+            location?.name.replace(" ", "").toLowerCase() +
             ".png"
           }
           alt={location?.name}
@@ -54,7 +54,7 @@ export default function Page({ params }: { params: { location: string } }) {
           src={
             "/locations/destiny2_" +
             // @ts-ignore
-            location?.name.replace(" ", "") +
+            location?.name.replace(" ", "").toLowerCase() +
             ".png"
           }
           alt={location?.name}
