@@ -68,12 +68,12 @@ export default function MapImage() {
 
       {menuOpen && (
         <div className="absolute right-0 top-0 z-20 h-screen w-screen animate-slideInSmooth items-center justify-center overflow-hidden rounded-md bg-black md:w-[600px]">
-          <div className="flex flex-col gap-2 px-6 py-4">
+          <div className="flex flex-col gap-1 px-6 py-4">
             <p className="text-2xl font-semibold">
               {/* @ts-ignore */}
               {selectedLocation?.name}
             </p>
-            <p>
+            <p className="tracking-tighter text-neutral-300">
               {/* @ts-ignore */}
               {selectedLocation?.description}
             </p>
