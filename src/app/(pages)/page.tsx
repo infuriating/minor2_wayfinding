@@ -1,14 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import Image from "next/image";
+import { RetrieveQuotes } from "@/lib/RetrieveQuotes";
 
-export default function Home() {
+export default async function Home() {
+  const quotes = await RetrieveQuotes();
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  console.log(quote);
+
   return (
     <>
       <div className="absolute z-10 h-screen w-screen animate-darkenIn bg-neutral-900 backdrop-blur-lg">
         <div className="flex h-full items-center justify-center">
-          <p>envision the darkness within you.</p>
+          <p>{quote ? quote.text : "envision the darkness within you."}</p>
         </div>
       </div>
       <div className="flex h-screen flex-col items-center justify-center gap-2">
